@@ -161,10 +161,10 @@ if sidebar_select == 'Google Sonuçları':
     row0_1, row0_2 = st.beta_columns((1, 1))
     
     with row0_1:
-        google_keyword_select = st.multiselect('Kavram seçiniz.', list(google.keyword.unique()), default = list(google.keyword.unique()))
+        google_keyword_select = st.multiselect('Kavram seçiniz.', list(google_content_words.keyword.unique()), default = list(google_content_words.keyword.unique()))
         
     with row0_2:
-        google_year_select = st.multiselect('Yıl seçiniz.', list(google.year.unique()), default = list(google.year.unique()))
+        google_year_select = st.multiselect('Yıl seçiniz.', list(google_content_words.year.unique()), default = list(google_content_words.year.unique()))
         
     #Haber Sayısı
     
