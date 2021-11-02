@@ -86,7 +86,7 @@ if sidebar_select == 'Tweetler':
     with col2:
         st.markdown('## Yıla ve Kavrama Göre Tweet Sayıları')
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
-                     labels={"year": "Yıl", "count": "Tweet Sayısı"})
+                     labels={"year": "Yıl", "count": "Tweet Sayısı", "keyword":"Kavram"})
         st.plotly_chart(fig, use_container_width=True)
         
     #Tweet Atan Kişiler
@@ -219,7 +219,7 @@ if sidebar_select == 'Google Sonuçları':
     with col2:
         st.markdown('## Yıla ve Kavrama Göre Haber Sayıları')
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
-                     labels={"year": "Yıl", "count": "Haber Sayısı"})
+                     labels={"year": "Yıl", "count": "Haber Sayısı", "keyword":"Kavram"})
         st.plotly_chart(fig, use_container_width=True)
     
     #Siteler        
