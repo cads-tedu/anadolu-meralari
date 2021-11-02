@@ -1,0 +1,234 @@
+year,keyword,count
+2008,sürdürülebilir tarım,1
+2009,doğa dostu tarım,1
+2009,permakültür,7
+2009,sürdürülebilir tarım,1
+2010,iyi tarım uygulamaları,7
+2010,permakültür,27
+2010,pozitif tarım,2
+2010,sürdürülebilir tarım,7
+2010,toprak işlemesiz tarım,2
+2011,agroekoloji,1
+2011,iyi tarım uygulamaları,18
+2011,konvansiyonel hayvancılık,1
+2011,permakültür,119
+2011,pozitif tarım,5
+2011,sürdürülebilir tarım,13
+2011,toprak işlemesiz tarım,1
+2012,agroekoloji,3
+2012,bütüncül yönetim,3
+2012,doğa dostu tarım,13
+2012,dönüşümlü ekim,5
+2012,insan dostu tarım,2
+2012,iyi tarım uygulamaları,41
+2012,permakültür,267
+2012,pestisit kullanımı,6
+2012,pozitif tarım,14
+2012,sürdürülebilir tarım,78
+2012,toprağın su tutma kapasitesi,1
+2012,yenileyici tarım,1
+2012,yeşil gübreleme,7
+2013,agroekoloji,1
+2013,bütüncül yönetim,4
+2013,doğa dostu tarım,5
+2013,dönüşümlü ekim,4
+2013,iklim dostu tarım,1
+2013,iyi tarım uygulamaları,84
+2013,konvansiyonel hayvancılık,2
+2013,monokültür tarım,24
+2013,onarıcı tarım,1
+2013,permakültür,244
+2013,pestisit kullanımı,9
+2013,pozitif tarım,23
+2013,savory enstitüsü,1
+2013,sürdürülebilir tarım,140
+2013,toprak işlemesiz tarım,5
+2013,yeşil gübreleme,5
+2014,agroekoloji,2
+2014,bütüncül yönetim,72
+2014,doğa dostu tarım,19
+2014,dönüşümlü ekim,12
+2014,ekolojik onarım,6
+2014,fukuoka doğal tarım yöntemi,2
+2014,insan dostu tarım,2
+2014,iyi tarım uygulamaları,29
+2014,monokültür tarım,2
+2014,onarıcı tarım,22
+2014,permakültür,289
+2014,pestisit kullanımı,3
+2014,pozitif tarım,20
+2014,savory enstitüsü,13
+2014,sürdürülebilir tarım,169
+2014,toprak işlemesiz tarım,9
+2014,yeşil gübreleme,7
+2015,agroekoloji,2
+2015,bütüncül planlı otlatma,1
+2015,bütüncül yönetim,77
+2015,doğa dostu tarım,19
+2015,doğa temelli çözümler,1
+2015,dönüşümlü ekim,1
+2015,ekolojik onarım,3
+2015,iklim dostu tarım,3
+2015,insan dostu tarım,3
+2015,iyi tarım uygulamaları,44
+2015,monokültür tarım,2
+2015,onarıcı tarım,77
+2015,onarım çağı,3
+2015,permakültür,262
+2015,pestisit kullanımı,7
+2015,planlı otlatma,1
+2015,pozitif tarım,22
+2015,savory enstitüsü,1
+2015,sürdürülebilir tarım,283
+2015,toprak işlemesiz tarım,1
+2015,toprağa karbon gömme,2
+2015,yeşil gübreleme,10
+2016,agroekoloji,11
+2016,bütüncül yönetim,26
+2016,doğa dostu tarım,27
+2016,doğa temelli çözümler,2
+2016,dönüşümlü ekim,4
+2016,ekolojik onarım,1
+2016,insan dostu tarım,7
+2016,iyi tarım uygulamaları,50
+2016,konvansiyonel hayvancılık,1
+2016,monokültür tarım,2
+2016,onarıcı tarım,41
+2016,permakültür,310
+2016,pestisit kullanımı,7
+2016,pozitif tarım,30
+2016,sürdürülebilir tarım,350
+2016,toprak işlemesiz tarım,4
+2016,topraktaki organik madde miktarı,1
+2016,toprağın su tutma kapasitesi,2
+2016,yeşil gübreleme,27
+2017,agroekoloji,8
+2017,bütüncül yönetim,24
+2017,doğa dostu tarım,23
+2017,doğa temelli çözümler,1
+2017,dönüşümlü ekim,2
+2017,ekolojik onarım,1
+2017,insan dostu tarım,6
+2017,iyi tarım uygulamaları,49
+2017,konvansiyonel hayvancılık,1
+2017,monokültür tarım,4
+2017,onarıcı tarım,56
+2017,permakültür,275
+2017,pestisit kullanımı,17
+2017,pozitif tarım,27
+2017,savory enstitüsü,1
+2017,sürdürülebilir tarım,751
+2017,toprak işlemesiz tarım,3
+2017,yeşil gübreleme,18
+2018,agroekoloji,14
+2018,bütüncül planlı otlatma,3
+2018,bütüncül yönetim,46
+2018,doğa dostu tarım,27
+2018,doğa temelli çözümler,9
+2018,dönüşümlü ekim,9
+2018,ekolojik onarım,2
+2018,iklim dostu tarım,3
+2018,insan dostu tarım,6
+2018,iyi tarım uygulamaları,80
+2018,konvansiyonel hayvancılık,3
+2018,monokültür tarım,11
+2018,onarıcı tarım,37
+2018,permakültür,352
+2018,pestisit kullanımı,34
+2018,planlı otlatma,3
+2018,pozitif tarım,106
+2018,savory enstitüsü,2
+2018,sürdürülebilir tarım,993
+2018,toprak işlemesiz tarım,5
+2018,topraktaki organik madde miktarı,3
+2018,toprağa karbon gömme,1
+2018,toprağın su tutma kapasitesi,1
+2018,yeşil gübreleme,24
+2018,yoğun otlatma,2
+2019,agroekoloji,75
+2019,bütüncül planlı otlatma,1
+2019,bütüncül yönetim,66
+2019,canlandırıcı tarım,2
+2019,doğa dostu tarım,42
+2019,doğa temelli çözümler,10
+2019,dönüm hattı tasarımı,1
+2019,dönüşümlü ekim,13
+2019,ekolojik onarım,4
+2019,iklim dostu tarım,6
+2019,insan dostu tarım,4
+2019,iyi tarım uygulamaları,151
+2019,konvansiyonel hayvancılık,2
+2019,monokültür tarım,22
+2019,onarıcı tarım,59
+2019,permakültür,412
+2019,pestisit kullanımı,190
+2019,planlı otlatma,2
+2019,pozitif tarım,108
+2019,savory enstitüsü,2
+2019,sürdürülebilir tarım,1174
+2019,sürmesiz tarım,1
+2019,toprak işlemesiz tarım,13
+2019,topraktaki organik madde miktarı,1
+2019,toprağın su tutma kapasitesi,12
+2019,yenileyici tarım,1
+2019,yeşil gübreleme,24
+2019,yoğun otlatma,1
+2020,agroekoloji,64
+2020,bütüncül planlı otlatma,1
+2020,bütüncül yönetim,86
+2020,doğa dostu tarım,118
+2020,doğa temelli çözümler,6
+2020,dönüm hattı tasarımı,2
+2020,dönüşümlü ekim,30
+2020,ekolojik onarım,16
+2020,iklim dostu tarım,6
+2020,insan dostu tarım,4
+2020,iyi tarım uygulamaları,122
+2020,konvansiyonel hayvancılık,1
+2020,meraların onarımı,2
+2020,monokültür tarım,29
+2020,onarıcı tarım,160
+2020,onarım çağı,24
+2020,permakültür,517
+2020,pestisit kullanımı,160
+2020,planlı otlatma,2
+2020,pozitif tarım,324
+2020,savory enstitüsü,3
+2020,sürdürülebilir tarım,2327
+2020,toprak işlemesiz tarım,14
+2020,topraktaki organik madde miktarı,6
+2020,toprağın su tutma kapasitesi,17
+2020,yenileyici tarım,4
+2020,yeşil gübreleme,56
+2020,yoğun otlatma,8
+2021,agroekoloji,120
+2021,bütüncül planlı otlatma,5
+2021,bütüncül yönetim,73
+2021,canlandırıcı tarım,4
+2021,doğa dostu tarım,73
+2021,doğa temelli çözümler,27
+2021,dönüşümlü ekim,15
+2021,ekolojik onarım,9
+2021,fukuoka doğal tarım yöntemi,3
+2021,iklim dostu tarım,16
+2021,insan dostu tarım,7
+2021,iyi tarım uygulamaları,111
+2021,konvansiyonel hayvancılık,11
+2021,meraların onarımı,1
+2021,monokültür tarım,15
+2021,onarıcı tarım,189
+2021,onarım çağı,7
+2021,permakültür,1682
+2021,pestisit kullanımı,135
+2021,planlı otlatma,11
+2021,pozitif tarım,309
+2021,savory enstitüsü,3
+2021,sürdürülebilir tarım,3364
+2021,sürmesiz tarım,3
+2021,toprak işlemesiz tarım,14
+2021,topraktaki organik madde miktarı,17
+2021,toprağa karbon gömme,3
+2021,toprağın su tutma kapasitesi,37
+2021,yenileyici tarım,30
+2021,yeşil gübreleme,59
+2021,yoğun otlatma,5
