@@ -140,21 +140,6 @@ if sidebar_select == 'Tweetler':
         plt.show()
         st.pyplot()
         
-    #Tweetlerdeki Kelimeler
-    filtered_tweet_words = tweet_words[(tweet_words.year.isin(year_select)) & (tweet_words.keyword.isin(keyword_select))].reset_index(drop = True)
-    ordered_tweet_words = filtered_tweet_words.words.value_counts().to_frame().rename(columns = {'words':'count'}).reset_index().rename(columns = {'index':'word'})
-    
-    st.markdown('## Tweetlerde En Sık Kullanılan Kelimeler')
-    
-    col1, col2, col3 = st.columns([0.1, 0.7, 0.2])
-    
-    with col2:
-        fig = px.bar(ordered_tweet_words.iloc[0:20, :], x = 'count', y = 'word',
-                     labels={"word": "Kelime", "count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"))
-        fig.update_layout(width=1000, height=600)
-        st.plotly_chart(fig)
-        
     #Tweetlerdeki İkili Kelimeler
     filtered_tweet_bigrams = tweet_bigrams[(tweet_bigrams.year.isin(year_select)) & (tweet_bigrams.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_tweet_bigrams = filtered_tweet_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
@@ -204,18 +189,14 @@ if sidebar_select == 'Google Sonuçları':
     filtered_years = google_years[(google_years.year.isin(google_year_select)) & (google_years.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
-    col1, col2, col3 = st.columns([1, 1.5, 0.1])
+    st.markdown('## Yıla ve Kavrama Göre Haber Sayıları')
     
-    with col1:
-        st.markdown('## Yıla Göre Haber Sayıları')
-        fig = px.line(ordered_years, x = 'year', y = 'count',
-                     labels={"year": "Yıl", "count": "Haber Sayısı"})
-        st.plotly_chart(fig, use_container_width=True)
+    col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
     with col2:
-        st.markdown('## Yıla ve Kavrama Göre Haber Sayıları')
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
                      labels={"year": "Yıl", "count": "Haber Sayısı", "keyword":"Kavram"})
+        fig.update_layout(width=1100, height=800)
         st.plotly_chart(fig, use_container_width=True)
     
     #Siteler        
