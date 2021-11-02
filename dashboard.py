@@ -75,13 +75,13 @@ if sidebar_select == 'Tweetler':
     filtered_years = years[(years.year.isin(year_select)) & (years.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
-    col1, col2, col3 = st.columns([0.1, 0.6, 0.3])
+    col1, col2, col3 = st.columns([0.05, 0.75, 0.2])
         
     with col2:
         st.markdown('## Yıla ve Kavrama Göre Tweet Sayıları')
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
                      labels={"year": "Yıl", "count": "Tweet Sayısı", "keyword":"Kavram"})
-        fig.update_layout(width=1000, height=600)
+        fig.update_layout(width=1200, height=800)
         st.plotly_chart(fig, use_container_width=True)
         
     #Tweet Atan Kişiler
