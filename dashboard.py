@@ -93,7 +93,7 @@ if sidebar_select == 'Tweetler':
     filtered_names = names[(names.year.isin(year_select)) & (names.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_names = filtered_names.name.value_counts().reset_index().rename(columns = {'index':'name', 'name':'count'})
     
-    st.markdown('## Bu kavramları içeren tweet atan kişiler kimler?')
+    st.markdown('## Kimler bu kavramları içeren tweet atıyor?')
     
     col1, col2, col3 = st.columns([0.1, 0.6, 0.3])
     
