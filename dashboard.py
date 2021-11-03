@@ -76,7 +76,7 @@ if sidebar_select == 'Tweetler':
 
     st.markdown('## Tweetlerin Metinsel Analizi')
     st.markdown(' ')
-    st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen kavramlar kullanılarak Twitter'dan çekilmiştir.")
+    st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen 32 kavram kullanılarak Twitter'dan çekilmiştir. Veri seti, kavramları içeren bu zamana kadar atılmış bütün tweetleri içermektedir. Aşağıdaki filtrelerden incelemek istediğiniz kavramları ve yılları seçtiğinizde, bu kavramları içeren tüm tweetlerin analizlerine ulaşabilirsiniz. Sayfanın devamında oluşturulan bütün grafikler aşağıdaki kavram ve yıl seçiminize göre güncellenmektedir.")
     
     twitter_keywords = list(twitter.keyword.unique())
     twitter_years = list(twitter.year.unique())
