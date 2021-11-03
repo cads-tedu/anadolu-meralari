@@ -53,8 +53,15 @@ if sidebar_select == 'Uygulama Hakkında':
     
     st.title('Onarıcı Tarım Ekosisteminin Metinsel Analizi')
     st.markdown(' ')
-    st.markdown("Bu uygulama, Türkiye'de onarıcı tarım ekosisteminde proje paydaşı olan Anadolu Meralarının yerini ölçmek için geliştirilmiştir. Alandaki aktörler ile belirlenen kavramlar kullanılarak Google ve Twitterdan veri kazıma yöntemiyle elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.")
+    
+    col1, col2 = st.columns([1.5, 1])
+    
+    with col1:
+        st.markdown("Bu uygulama, Türkiye'de onarıcı tarım ekosisteminde proje paydaşı olan Anadolu Meralarının yerini ölçmek için geliştirilmiştir. Alandaki aktörler ile belirlenen kavramlar kullanılarak Google ve Twitterdan veri kazıma yöntemiyle elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.")
 
+    with col2:
+        st.image('onarıcı_tarım.jpeg')
+    
 if sidebar_select == 'Tweetler':
 
     st.title('Tweetlerin Metinsel Analizi')
