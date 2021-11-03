@@ -238,6 +238,7 @@ if sidebar_select == 'Google Sonuçları':
     
     filtered_google_title_bigrams = google_title_bigrams[(google_title_bigrams.year.isin(google_year_select)) & (google_title_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_title_bigrams = filtered_google_title_bigrams.title_bigrams.value_counts().to_frame().rename(columns = {'title_bigrams':'count'}).reset_index().rename(columns = {'index':'title_bigram'})
+    ordered_google_title_bigrams = ordered_google_title_bigrams[~ordered_google_title_bigrams.title_bigram.isin(google_keyword_select)]
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
@@ -252,6 +253,7 @@ if sidebar_select == 'Google Sonuçları':
    
     filtered_google_content_bigrams = google_content_bigrams[(google_content_bigrams.year.isin(google_year_select)) & (google_content_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_content_bigrams = filtered_google_content_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
+    ordered_google_content_bigrams = ordered_google_content_bigrams[~ordered_google_content_bigrams.bigram.isin(google_keyword_select)]
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
