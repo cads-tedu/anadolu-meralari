@@ -213,7 +213,11 @@ if sidebar_select == 'Google Sonuçları':
 
     st.markdown('## Google Sonuçlarının Metinsel Analizi')
     st.markdown(' ')
-    st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen 32 kavram kullanılarak Google arama sonuçlarından çekilmiştir. Veri seti, belirlenen kavramlarla yapılan Google aramalarında 2014 yılından itibaren çıkan web sitelerinin içeriklerinden oluşmaktadır. Veri seti, 6100 web sitesi içeriğine sahiptir. Aşağıdaki filtrelerden incelemek istediğiniz kavramları ve yılları seçtiğinizde, bu kavramları içeren web sitesi içeriklerine ulaşabilirsiniz. Sayfanın devamında oluşturulan bütün grafikler aşağıdaki kavram ve yıl seçiminize göre güncellenmektedir.")
+    
+    col1, col2 = st.columns([1.5, 1])
+    
+    with col1:
+        st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen 32 kavram kullanılarak Google arama sonuçlarından çekilmiştir. Veri seti, belirlenen kavramlarla yapılan Google aramalarında 2014 yılından itibaren çıkan web sitelerinin içeriklerinden oluşmaktadır. Veri seti, 6100 web sitesi içeriğine sahiptir. Aşağıdaki filtrelerden incelemek istediğiniz kavramları ve yılları seçtiğinizde, bu kavramları içeren web sitesi içeriklerine ulaşabilirsiniz. Sayfanın devamında oluşturulan bütün grafikler aşağıdaki kavram ve yıl seçiminize göre güncellenmektedir.")
     
     google_keywords = list(google.keyword.unique())
     google_year = list(google.year.unique())
@@ -233,6 +237,8 @@ if sidebar_select == 'Google Sonuçları':
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
     st.markdown('### Yıllara Göre Kavramların Google Aramalarındaki Sıklığı')
+    st.markdown(' ')
+    st.markdown('Aşağıdaki grafik, seçtiğiniz kavramların seçtiğiniz yıllar içinde kaç web sitesi içeriğinde geçtiğini göstermektedir.')
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
@@ -244,6 +250,8 @@ if sidebar_select == 'Google Sonuçları':
     
     #Siteler        
     st.markdown('### Google Sonuçlarına Göre En Çok İçerik Üreten Web Siteleri')
+    st.markdown(' ')
+    st.markdown('Aşağıdaki grafik, seçtiğiniz kavramları kullanarak en çok içerik üreten web sitelerini göstermektedir.')
      
     filtered_sites = google_sites[(google_sites.year.isin(google_year_select)) & (google_sites.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_sites = filtered_sites.site.value_counts().to_frame().rename(columns = {'site':'count'}).reset_index().rename(columns = {'index':'site'})
@@ -258,6 +266,8 @@ if sidebar_select == 'Google Sonuçları':
         
     #Başlıklarda Kelime Sıklıkları
     st.markdown('### Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - Başlıklar İçin')
+    st.markdown(' ')
+    st.markdown('Aşağıdaki grafik, seçtiğiniz kavramları içeren web sitesi başlıklarında en sık bir arada kullanılan kelime ikililerini göstermektedir.')
     
     filtered_google_title_bigrams = google_title_bigrams[(google_title_bigrams.year.isin(google_year_select)) & (google_title_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_title_bigrams = filtered_google_title_bigrams.title_bigrams.value_counts().to_frame().rename(columns = {'title_bigrams':'count'}).reset_index().rename(columns = {'index':'title_bigram'})
@@ -273,6 +283,8 @@ if sidebar_select == 'Google Sonuçları':
         
     #İçeriklerde Kelime Sıklıkları
     st.markdown('### Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - İçerikler İçin')
+    st.markdown(' ')
+    st.markdown('Aşağıdaki grafik, seçtiğiniz kavramları içeren web sitesi içeriklerinde en sık bir arada kullanılan kelime ikililerini göstermektedir.')
    
     filtered_google_content_bigrams = google_content_bigrams[(google_content_bigrams.year.isin(google_year_select)) & (google_content_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_content_bigrams = filtered_google_content_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
