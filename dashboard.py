@@ -118,7 +118,7 @@ if sidebar_select == 'Tweetler':
     st.markdown('### Kimler bu kavramları içeren tweet atıyor?')
     st.markdown(' ')
     
-    col1, col2 = st.columns([1.5, 1])
+    col1, col2 = st.columns([1.6, 1])
     
     with col1:
         st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları kullanarak tweet atan kişi ve kurumların isimlerini göstermektedir. Kullanıcının diğer kullanıcılara göre bu kavramları içeren ne kadar çok tweeti varsa ismi o kadar büyük gözükmektedir.")
@@ -165,7 +165,7 @@ if sidebar_select == 'Tweetler':
         
     with col2:
         st.markdown('### Mentionlar')
-        st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları içeren tweetlerde mentionla bahsedilen ekosistem aktörlerini göstermektedir. Bu kişi ve kurumlar ikincil aktörler olarak yorumlanabilir.")
+        st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları içeren tweetlerde mentionla bahsedilen ekosistem aktörlerini göstermektedir. Bu kişi ve kurumların bazıları ikincil aktörler olarak yorumlanabilir.")
         wordcloud = WordCloud(background_color="black", max_words=len(ordered_mentions))
         d = {}
         for i in range(len(ordered_mentions)):
@@ -182,7 +182,13 @@ if sidebar_select == 'Tweetler':
     ordered_tweet_bigrams = filtered_tweet_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
     ordered_tweet_bigrams = ordered_tweet_bigrams[~ordered_tweet_bigrams.bigram.isin(keyword_select)]
     
+    st.markdown(' ')
     st.markdown('### Twitter Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri')
+    
+    col1, col2 = st.columns([1.5, 1])
+    
+    with col1:
+        st.markdown('Aşağıdaki grafik, seçtiğiniz kavramları içeren tweetlerde en sık bir arada kullanılan kelime ikililerini göstermektedir.)
     
     col1, col2, col3 = st.columns([0.1, 0.7, 0.2])
     
