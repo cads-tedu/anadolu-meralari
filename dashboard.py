@@ -60,7 +60,7 @@ if sidebar_select == 'Uygulama Hakkında':
         st.markdown("Bu uygulama, Türkiye'de onarıcı tarım ekosisteminde proje paydaşı olan Anadolu Meralarının yerini ölçmek için geliştirilmiştir. Alandaki aktörler ile belirlenen kavramlar kullanılarak Google ve Twitterdan veri kazıma yöntemiyle elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.")
 
     with col2:
-        st.image('onarıcı_tarım.jpeg')
+        st.image('https://www.bugday.org/blog/wp-content/uploads/2020/04/image-asset.jpeg')
     
 if sidebar_select == 'Tweetler':
 
