@@ -79,7 +79,7 @@ if sidebar_select == 'Tweetler':
     with col2:
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
                      labels={"year": "Yıl", "count": "Tweet Sayısı", "keyword":"Kavram"})
-        fig.update_layout(font=dict(size=10), width=700, height=600)
+        fig.update_layout(font=dict(size=15), width=700, height=600)
         st.plotly_chart(fig, use_container_width=True)
         
     #Tweet Atan Kişiler
@@ -148,7 +148,7 @@ if sidebar_select == 'Tweetler':
     with col2:
         fig = px.bar(ordered_tweet_bigrams.iloc[0:20, :], x = 'count', y = 'bigram',
                      labels={"bigram": "Kelime İkilisi","count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=10), width=1000, height=600)
+        fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=15), width=1000, height=600)
         st.plotly_chart(fig)
 
     #st.header('Topic Modelling')
@@ -192,7 +192,7 @@ if sidebar_select == 'Google Sonuçları':
     with col2:
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
                      labels={"year": "Yıl", "count": "Haber Sayısı", "keyword":"Kavram"})
-        fig.update_layout(width=1100, height=800)
+        fig.update_layout(font=dict(size=15), width=1100, height=800)
         st.plotly_chart(fig, use_container_width=True)
     
     #Siteler        
@@ -206,8 +206,7 @@ if sidebar_select == 'Google Sonuçları':
     with col2:
         fig = px.bar(ordered_sites.iloc[0:20, :], x = 'count', y = 'site',
                      labels={"site": "Web Sitesi", "count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"))
-        fig.update_layout(width=1000, height=600)
+        fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=15), width=1000, height=600)
         st.plotly_chart(fig)
         
     #Başlıklarda Kelime Sıklıkları
@@ -221,8 +220,7 @@ if sidebar_select == 'Google Sonuçları':
     with col2:
         fig = px.bar(ordered_google_title_bigrams.iloc[0:20, :], x = 'count', y = 'title_bigram',
                      labels={"title_bigram": "Kelime İkilisi","count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"))
-        fig.update_layout(width=1000, height=600)
+        fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=15), width=1000, height=600)
         st.plotly_chart(fig, use_container_width=True)
         
     #İçeriklerde Kelime Sıklıkları
@@ -236,8 +234,7 @@ if sidebar_select == 'Google Sonuçları':
     with col2:
         fig = px.bar(ordered_google_content_bigrams.iloc[0:20, :], x = 'count', y = 'bigram',
                      labels={"bigram": "Kelime İkilisi","count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"))
-        fig.update_layout(width=1000, height=600)
+        fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=15), width=1000, height=600)
         st.plotly_chart(fig, use_container_width=True)
         
     #Topic Modelling
