@@ -117,7 +117,13 @@ if sidebar_select == 'Tweetler':
     
     st.markdown('### Kimler bu kavramları içeren tweet atıyor?')
     st.markdown(' ')
-    st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları kullanarak tweet atan kişi ve kurumların isimlerini göstermektedir. Kullanıcının diğer kullanıcılara göre bu kavramları içeren ne kadar çok tweeti varsa ismi o kadar büyük gözükmektedir.")
+    
+    col1, col2 = st.columns([1.5, 1])
+    
+    with col1:
+        st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları kullanarak tweet atan kişi ve kurumların isimlerini göstermektedir. Kullanıcının diğer kullanıcılara göre bu kavramları içeren ne kadar çok tweeti varsa ismi o kadar büyük gözükmektedir.")
+    
+    st.markdown(' ')
     
     col1, col2, col3 = st.columns([0.1, 0.6, 0.3])
     
@@ -132,7 +138,8 @@ if sidebar_select == 'Tweetler':
         plt.axis("off")
         plt.show()
         st.pyplot()
-        
+    
+    st.markdown(' ')
     st.markdown('### Tweetlerdeki Hashtagler ve Mentionlar')
     
     filtered_hashtags = hashtags[(hashtags.year.isin(year_select)) & (hashtags.keyword.isin(keyword_select))].reset_index(drop = True)
@@ -144,6 +151,7 @@ if sidebar_select == 'Tweetler':
     
     with col1:
         st.markdown('### Hashtagler')
+        st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları içeren tweetlerde en çok kullanılan hashtagleri göstermektedir.")
         wordcloud = WordCloud(background_color="black", max_words=len(orderes_hashtags))
         d = {}
         for i in range(len(orderes_hashtags)):
@@ -157,6 +165,7 @@ if sidebar_select == 'Tweetler':
         
     with col2:
         st.markdown('### Mentionlar')
+        st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları içeren tweetlerde mentionla bahsedilen ekosistem aktörlerini göstermektedir. Bu kişi ve kurumlar ikincil aktörler olarak yorumlanabilir.")
         wordcloud = WordCloud(background_color="black", max_words=len(ordered_mentions))
         d = {}
         for i in range(len(ordered_mentions)):
@@ -198,7 +207,7 @@ if sidebar_select == 'Google Sonuçları':
 
     st.markdown('## Google Sonuçlarının Metinsel Analizi')
     st.markdown(' ')
-    st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen kavramlar kullanılarak Google'dan çekilmiştir.")
+    st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen 32 kavram kullanılarak Google arama sonuçlarından çekilmiştir. Veri seti, belirlenen kavramlarla yapılan Google aramalarında 2014 yılından itibaren çıkan web sitelerinin içeriklerinden oluşmaktadır. Veri seti, 6100 web sitesi içeriğine sahiptir. Aşağıdaki filtrelerden incelemek istediğiniz kavramları ve yılları seçtiğinizde, bu kavramları içeren web sitesi içeriklerine ulaşabilirsiniz. Sayfanın devamında oluşturulan bütün grafikler aşağıdaki kavram ve yıl seçiminize göre güncellenmektedir.")
     
     google_keywords = list(google.keyword.unique())
     google_year = list(google.year.unique())
