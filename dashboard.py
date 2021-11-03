@@ -57,7 +57,7 @@ if sidebar_select == 'Uygulama Hakkında':
         st.markdown('## Onarıcı Tarım Ekosisteminin Metinsel Analizi')
         
     with col2:
-        st.image('https://yt3.ggpht.com/ytc/AKedOLR-L0VaKlMVwYZ6qdlKNLiVTXx59gxvGIJ_tq-5=s900-c-k-c0x00ffffff-no-rj')
+        st.image('https://yt3.ggpht.com/ytc/AKedOLR-L0VaKlMVwYZ6qdlKNLiVTXx59gxvGIJ_tq-5=s900-c-k-c0x00ffffff-no-rj', use_column_width = 'always')
         
     st.markdown(' ')
     
