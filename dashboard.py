@@ -74,7 +74,7 @@ if sidebar_select == 'Uygulama Hakkında':
         
 if sidebar_select == 'Tweetler':
     
-    st.markdown('# Tweetlerin Metinsel Analizi')
+    st.markdown('## Tweetlerin Metinsel Analizi')
     st.markdown(' ')
     
     col1, col2 = st.columns([1.5, 1])
@@ -99,7 +99,7 @@ if sidebar_select == 'Tweetler':
     filtered_years = years[(years.year.isin(year_select)) & (years.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
-    st.markdown('## Yıllara Göre Kavramların Twitter Aramalarındaki Sıklığı')
+    st.markdown('### Yıllara Göre Kavramların Twitter Aramalarındaki Sıklığı')
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
