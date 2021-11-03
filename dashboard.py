@@ -51,7 +51,14 @@ sidebar_select = st.sidebar.radio(" ", ('Uygulama Hakkında', 'Tweetler', 'Googl
 
 if sidebar_select == 'Uygulama Hakkında':
     
-    st.title('Onarıcı Tarım Ekosisteminin Metinsel Analizi')
+    col1, col2 = st.columns([1.5, 1])
+    
+    with col1:
+        st.markdown('## Onarıcı Tarım Ekosisteminin Metinsel Analizi')
+        
+    with col2:
+        st.image('https://yt3.ggpht.com/ytc/AKedOLR-L0VaKlMVwYZ6qdlKNLiVTXx59gxvGIJ_tq-5=s900-c-k-c0x00ffffff-no-rj')
+        
     st.markdown(' ')
     
     col1, col2 = st.columns([1.5, 1])
@@ -64,7 +71,7 @@ if sidebar_select == 'Uygulama Hakkında':
     
 if sidebar_select == 'Tweetler':
 
-    st.title('Tweetlerin Metinsel Analizi')
+    st.markdown('## Tweetlerin Metinsel Analizi')
     st.markdown(' ')
     st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen kavramlar kullanılarak Twitter'dan çekilmiştir.")
     
