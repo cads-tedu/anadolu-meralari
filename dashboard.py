@@ -39,12 +39,9 @@ names = pd.read_csv('tweet_names.csv')
 hashtags = pd.read_csv('hashtags.csv')
 mentions = pd.read_csv('mentions.csv')
 tweet_bigrams = pd.read_csv('tweet_bigrams.csv') 
-tweet_words = pd.read_csv('tweet_words.csv')
 google_years = pd.read_csv('google_years.csv')
 google_sites = pd.read_csv('google_sites.csv')
-google_title_words = pd.read_csv('google_title_words.csv')
 google_title_bigrams = pd.read_csv('google_title_bigrams.csv')
-google_content_words = pd.read_csv('google_content_words.csv')
 google_content_bigrams = pd.read_csv('google_content_bigrams.csv')
 
 ##Sidebar'a başlık ve farklı sayfalar oluşturmak için filtre ekleme
@@ -64,7 +61,7 @@ if sidebar_select == 'Tweetler':
     col1, col2 = st.columns([1, 1])
     
     with col1:
-        keyword_select = st.multiselect('Kavram seçiniz.', twitter_keywords, default = twitter_keywords)
+        keyword_select = st.multiselect('Kavram seçiniz.', twitter_keywords, default = ['sürdürülebilir tarım', 'permakültür', 'pozitif tarım', 'bütüncül yönetim', 'onarıcı tarım'])
         
     with col2:
         year_select = st.multiselect('Yıl seçiniz.', twitter_years, default = twitter_years)
@@ -75,7 +72,7 @@ if sidebar_select == 'Tweetler':
     filtered_years = years[(years.year.isin(year_select)) & (years.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
-    st.markdown('## Yıla ve Kavrama Göre Tweet Sayıları')
+    st.markdown('## Yıllara Göre Kavramların Twitter Aramalarındaki Sıklığı')
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
@@ -144,13 +141,13 @@ if sidebar_select == 'Tweetler':
     filtered_tweet_bigrams = tweet_bigrams[(tweet_bigrams.year.isin(year_select)) & (tweet_bigrams.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_tweet_bigrams = filtered_tweet_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
     
-    st.markdown('## Tweetlerde En Sık Kullanılan İkili Kelimeler')
+    st.markdown('## Twitter Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri')
     
     col1, col2, col3 = st.columns([0.1, 0.7, 0.2])
     
     with col2:
         fig = px.bar(ordered_tweet_bigrams.iloc[0:20, :], x = 'count', y = 'bigram',
-                     labels={"bigram": "İkili Kelime","count": "Sıklık"})
+                     labels={"bigram": "Kelime İkilisi","count": "Sıklık"})
         fig.update_layout(yaxis=dict(autorange="reversed"))
         fig.update_layout(width=1000, height=600)
         st.plotly_chart(fig)
@@ -178,7 +175,7 @@ if sidebar_select == 'Google Sonuçları':
     col1, col2 = st.columns([1, 1])
     
     with col1:
-        google_keyword_select = st.multiselect('Kavram seçiniz.', google_keywords, default = google_keywords)
+        google_keyword_select = st.multiselect('Kavram seçiniz.', google_keywords, default = ['sürdürülebilir tarım', 'permakültür', 'pozitif tarım', 'bütüncül yönetim', 'onarıcı tarım'])
         
     with col2:
         google_year_select = st.multiselect('Yıl seçiniz.', google_year, default = google_year)
@@ -189,7 +186,7 @@ if sidebar_select == 'Google Sonuçları':
     filtered_years = google_years[(google_years.year.isin(google_year_select)) & (google_years.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
-    st.markdown('## Yıla ve Kavrama Göre Haber Sayıları')
+    st.markdown('## Yıllara Göre Kavramların Google Aramalarındaki Sıklığı')
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
@@ -200,7 +197,7 @@ if sidebar_select == 'Google Sonuçları':
         st.plotly_chart(fig, use_container_width=True)
     
     #Siteler        
-    st.markdown('## En Çok İçerik Üreten Haber Siteleri')
+    st.markdown('## Google Sonuçlarına Göre En Çok İçerik Üreten Web Siteleri')
      
     filtered_sites = google_sites[(google_sites.year.isin(google_year_select)) & (google_sites.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_sites = filtered_sites.site.value_counts().to_frame().rename(columns = {'site':'count'}).reset_index().rename(columns = {'index':'site'})
@@ -215,51 +212,31 @@ if sidebar_select == 'Google Sonuçları':
         st.plotly_chart(fig)
         
     #Başlıklarda Kelime Sıklıkları
-    st.markdown('## Google Sonuçları Başlıklarında En Sık Kullanılan Kelimeler')
-    
-    filtered_google_title_words = google_title_words[(google_title_words.year.isin(google_year_select)) & (google_title_words.keyword.isin(google_keyword_select))].reset_index(drop = True)
-    ordered_google_title_words = filtered_google_title_words.title_words.value_counts().to_frame().rename(columns = {'title_words':'count'}).reset_index().rename(columns = {'index':'title_word'})
+    st.markdown('## Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - Başlıklar İçin')
     
     filtered_google_title_bigrams = google_title_bigrams[(google_title_bigrams.year.isin(google_year_select)) & (google_title_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_title_bigrams = filtered_google_title_bigrams.title_bigrams.value_counts().to_frame().rename(columns = {'title_bigrams':'count'}).reset_index().rename(columns = {'index':'title_bigram'})
     
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        fig = px.bar(ordered_google_title_words.iloc[0:20, :], x = 'count', y = 'title_word',
-                     labels={"title_word": "Kelime","count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"))
-        fig.update_layout(width=1000, height=600)
-        st.plotly_chart(fig, use_container_width=True)
+    col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
     with col2:
         fig = px.bar(ordered_google_title_bigrams.iloc[0:20, :], x = 'count', y = 'title_bigram',
-                     labels={"title_bigram": "İkili Kelime","count": "Sıklık"})
+                     labels={"title_bigram": "Kelime İkilisi","count": "Sıklık"})
         fig.update_layout(yaxis=dict(autorange="reversed"))
         fig.update_layout(width=1000, height=600)
         st.plotly_chart(fig, use_container_width=True)
         
     #İçeriklerde Kelime Sıklıkları
-    st.markdown('## Google Sonuçları İçeriklerinde En Sık Kullanılan Kelimeler')
-    
-    filtered_google_content_words = google_content_words[(google_content_words.year.isin(google_year_select)) & (google_content_words.keyword.isin(google_keyword_select))].reset_index(drop = True)
-    ordered_google_content_words = filtered_google_content_words.words.value_counts().to_frame().rename(columns = {'words':'count'}).reset_index().rename(columns = {'index':'word'})
-    
+    st.markdown('## Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - İçerikler İçin')
+   
     filtered_google_content_bigrams = google_content_bigrams[(google_content_bigrams.year.isin(google_year_select)) & (google_content_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_content_bigrams = filtered_google_content_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
     
-    col1, col2 = st.columns([1, 1])
-    
-    with col1:
-        fig = px.bar(ordered_google_content_words.iloc[0:20, :], x = 'count', y = 'word',
-                     labels={"word": "Kelime","count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"))
-        fig.update_layout(width=1000, height=600)
-        st.plotly_chart(fig, use_container_width=True)
+   col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
     with col2:
         fig = px.bar(ordered_google_content_bigrams.iloc[0:20, :], x = 'count', y = 'bigram',
-                     labels={"bigram": "İkili Kelime","count": "Sıklık"})
+                     labels={"bigram": "Kelime İkilisi","count": "Sıklık"})
         fig.update_layout(yaxis=dict(autorange="reversed"))
         fig.update_layout(width=1000, height=600)
         st.plotly_chart(fig, use_container_width=True)
