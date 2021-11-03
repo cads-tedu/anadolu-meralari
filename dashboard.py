@@ -61,12 +61,7 @@ if sidebar_select == 'Uygulama Hakkında':
     with col1:
         st.markdown("Bu uygulama, Türkiye'de onarıcı tarım ekosisteminde proje paydaşı olan Anadolu Meralarının yerini ölçmek için geliştirilmiştir. Anadolu Meraları ve alandaki diğer aktörler ile belirlenen bazı kavramlar kullanılarak Google ve Twitterdan bu kavramları içeren tweetler ve Google içerikleri veri kazıma yöntemiyle çekilmiştir ve elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.")
         st.markdown(' ')
-        st.markdown("Twitter ve Google arama sonuçlarından veri çekerken kullanılan kavramlar; **'onarıcı tarım', 'bütüncül yönetim', 'permakültür', 'meraların onarımı', 
-                    'sürdürülebilir tarım', 'onarım çağı', 'savory enstitüsü', 'bütüncül planlı otlatma', 'agroekoloji', 'yenileyici tarım', 'yeşil gübreleme', 
-                    'canlandırıcı tarım', 'fukuoka doğal tarım yöntemi', 'dönüşümlü ekim', 'sürmesiz tarım', 'ekolojik onarım', 'toprağa karbon gömme', 'monokültür tarım',
-                    'doğa temelli çözümler', 'pestisit kullanımı', 'planlı otlatma', 'konvansiyonel hayvancılık', 'dönüm hattı tasarımı', 'pozitif tarım', 'toprak işlemesiz tarım',
-                    'yoğun otlatma', 'iyi tarım uygulamaları', 'doğa dostu tarım', 'iklim dostu tarım', 'insan dostu tarım', 'toprağın su tutma kapasitesi', 
-                    'topraktaki organik madde miktarı'**")
+        st.markdown("Twitter ve Google arama sonuçlarından veri çekerken kullanılan kavramlar; **'onarıcı tarım', 'bütüncül yönetim', 'permakültür', 'meraların onarımı', 'sürdürülebilir tarım', 'onarım çağı', 'savory enstitüsü', 'bütüncül planlı otlatma', 'agroekoloji', 'yenileyici tarım', 'yeşil gübreleme', 'canlandırıcı tarım', 'fukuoka doğal tarım yöntemi', 'dönüşümlü ekim', 'sürmesiz tarım', 'ekolojik onarım', 'toprağa karbon gömme', 'monokültür tarım', 'doğa temelli çözümler', 'pestisit kullanımı', 'planlı otlatma', 'konvansiyonel hayvancılık', 'dönüm hattı tasarımı', 'pozitif tarım', 'toprak işlemesiz tarım', 'yoğun otlatma', 'iyi tarım uygulamaları', 'doğa dostu tarım', 'iklim dostu tarım', 'insan dostu tarım', 'toprağın su tutma kapasitesi', 'topraktaki organik madde miktarı'**")
  
     with col2:
         st.image('https://www.bugday.org/blog/wp-content/uploads/2020/04/image-asset.jpeg')
