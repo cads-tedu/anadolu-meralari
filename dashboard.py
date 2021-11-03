@@ -163,6 +163,7 @@ if sidebar_select == 'Tweetler':
     #Tweetlerdeki İkili Kelimeler
     filtered_tweet_bigrams = tweet_bigrams[(tweet_bigrams.year.isin(year_select)) & (tweet_bigrams.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_tweet_bigrams = filtered_tweet_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
+    ordered_tweet_bigrams = ordered_tweet_bigrams[~ordered_tweet_bigrams.bigram.isin(keyword_select)]
     
     st.markdown('## Twitter Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri')
     
