@@ -14,6 +14,9 @@ import streamlit.components.v1 as components
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(layout="wide")
 
+with st.spinner('Wait for it...'):
+    time.sleep(5)
+
 ## Sayfayı genişletme
 def _max_width_():
     max_width_str = f"max-width: 4000px;"
@@ -29,7 +32,6 @@ def _max_width_():
     )
     
 _max_width_()
-
 
 ##Veriyi yükleme
 twitter = pd.read_csv('twitter.csv')
