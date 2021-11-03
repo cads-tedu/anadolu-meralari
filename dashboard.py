@@ -232,7 +232,7 @@ if sidebar_select == 'Google Sonuçları':
     filtered_google_content_bigrams = google_content_bigrams[(google_content_bigrams.year.isin(google_year_select)) & (google_content_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_content_bigrams = filtered_google_content_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
     
-   col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
+    col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
     with col2:
         fig = px.bar(ordered_google_content_bigrams.iloc[0:20, :], x = 'count', y = 'bigram',
