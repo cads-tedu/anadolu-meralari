@@ -80,7 +80,7 @@ if sidebar_select == 'Tweetler':
     col1, col2 = st.columns([1.5, 1])
 
     with col1:
-        st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen 32 kavram kullanılarak Twitter'dan çekilmiştir. Veri seti, kavramları içeren bu zamana kadar atılmış bütün tweetleri içermektedir. Aşağıdaki filtrelerden incelemek istediğiniz kavramları ve yılları seçtiğinizde, bu kavramları içeren tüm tweetlerin analizlerine ulaşabilirsiniz. Sayfanın devamında oluşturulan bütün grafikler aşağıdaki kavram ve yıl seçiminize göre güncellenmektedir.")
+        st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen 32 kavram kullanılarak Twitter'dan çekilmiştir. Veri seti, kavramları içeren bu zamana kadar atılmış 19522 tweeti ve bu tweetleri atan kullanıcıların isimlerini içermektedir. Aşağıdaki filtrelerden incelemek istediğiniz kavramları ve yılları seçtiğinizde, bu kavramları içeren tüm tweetlerin analizlerine ulaşabilirsiniz. Sayfanın devamında oluşturulan bütün grafikler aşağıdaki kavram ve yıl seçiminize göre güncellenmektedir.")
     
     twitter_keywords = list(twitter.keyword.unique())
     twitter_years = list(twitter.year.unique())
@@ -99,7 +99,9 @@ if sidebar_select == 'Tweetler':
     filtered_years = years[(years.year.isin(year_select)) & (years.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
-    st.markdown('### Yıllara Göre Kavramların Twitter Aramalarındaki Sıklığı')
+    st.markdown('### Yıllara Göre Kavramların Tweetlerdeki Kullanım Sıklığı')
+    st.markdown(' ')
+    st.markdown('Aşağıdaki grafik, seçtiğiniz kavramların seçtiğiniz yıllar içinde kaç tweet içinde geçtiğini göstermektedir.')
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
@@ -113,7 +115,9 @@ if sidebar_select == 'Tweetler':
     filtered_names = names[(names.year.isin(year_select)) & (names.keyword.isin(keyword_select))].reset_index(drop = True)
     ordered_names = filtered_names.name.value_counts().reset_index().rename(columns = {'index':'name', 'name':'count'})
     
-    st.markdown('## Kimler bu kavramları içeren tweet atıyor?')
+    st.markdown('### Kimler bu kavramları içeren tweet atıyor?')
+    st.markdown(' ')
+    st.markdown("Aşağıdaki wordcloud, seçtiğiniz kavramları kullanarak tweet atan kişi ve kurumların isimlerini göstermektedir. Kullanıcının diğer kullanıcılara göre bu kavramları içeren ne kadar çok tweeti varsa ismi o kadar büyük gözükmektedir.")
     
     col1, col2, col3 = st.columns([0.1, 0.6, 0.3])
     
@@ -129,7 +133,7 @@ if sidebar_select == 'Tweetler':
         plt.show()
         st.pyplot()
         
-    st.header('Tweetlerdeki Hashtagler ve Mentionlar')
+    st.markdown('### Tweetlerdeki Hashtagler ve Mentionlar')
     
     filtered_hashtags = hashtags[(hashtags.year.isin(year_select)) & (hashtags.keyword.isin(keyword_select))].reset_index(drop = True)
     orderes_hashtags = filtered_hashtags.hashtag.value_counts().reset_index().rename(columns = {'index':'hashtag', 'hashtag':'count'})
@@ -169,7 +173,7 @@ if sidebar_select == 'Tweetler':
     ordered_tweet_bigrams = filtered_tweet_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
     ordered_tweet_bigrams = ordered_tweet_bigrams[~ordered_tweet_bigrams.bigram.isin(keyword_select)]
     
-    st.markdown('## Twitter Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri')
+    st.markdown('### Twitter Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri')
     
     col1, col2, col3 = st.columns([0.1, 0.7, 0.2])
     
@@ -192,7 +196,7 @@ if sidebar_select == 'Tweetler':
     
 if sidebar_select == 'Google Sonuçları':
 
-    st.title('Google Sonuçlarının Metinsel Analizi')
+    st.markdown('## Google Sonuçlarının Metinsel Analizi')
     st.markdown(' ')
     st.markdown("Bu uygulamada kullanılan veri seti, alanla ilgili belirlenen kavramlar kullanılarak Google'dan çekilmiştir.")
     
@@ -213,7 +217,7 @@ if sidebar_select == 'Google Sonuçları':
     filtered_years = google_years[(google_years.year.isin(google_year_select)) & (google_years.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_years = filtered_years.groupby('year')['count'].sum().to_frame().reset_index()
     
-    st.markdown('## Yıllara Göre Kavramların Google Aramalarındaki Sıklığı')
+    st.markdown('### Yıllara Göre Kavramların Google Aramalarındaki Sıklığı')
     
     col1, col2, col3 = st.columns([0.05, 0.85, 0.1])
         
@@ -224,7 +228,7 @@ if sidebar_select == 'Google Sonuçları':
         st.plotly_chart(fig, use_container_width=True)
     
     #Siteler        
-    st.markdown('## Google Sonuçlarına Göre En Çok İçerik Üreten Web Siteleri')
+    st.markdown('### Google Sonuçlarına Göre En Çok İçerik Üreten Web Siteleri')
      
     filtered_sites = google_sites[(google_sites.year.isin(google_year_select)) & (google_sites.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_sites = filtered_sites.site.value_counts().to_frame().rename(columns = {'site':'count'}).reset_index().rename(columns = {'index':'site'})
@@ -238,7 +242,7 @@ if sidebar_select == 'Google Sonuçları':
         st.plotly_chart(fig)
         
     #Başlıklarda Kelime Sıklıkları
-    st.markdown('## Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - Başlıklar İçin')
+    st.markdown('### Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - Başlıklar İçin')
     
     filtered_google_title_bigrams = google_title_bigrams[(google_title_bigrams.year.isin(google_year_select)) & (google_title_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_title_bigrams = filtered_google_title_bigrams.title_bigrams.value_counts().to_frame().rename(columns = {'title_bigrams':'count'}).reset_index().rename(columns = {'index':'title_bigram'})
@@ -253,7 +257,7 @@ if sidebar_select == 'Google Sonuçları':
         st.plotly_chart(fig, use_container_width=True)
         
     #İçeriklerde Kelime Sıklıkları
-    st.markdown('## Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - İçerikler İçin')
+    st.markdown('### Google Sonuçlarına Göre En Sık Bir Arada Kullanılan Kelime İkilileri - İçerikler İçin')
    
     filtered_google_content_bigrams = google_content_bigrams[(google_content_bigrams.year.isin(google_year_select)) & (google_content_bigrams.keyword.isin(google_keyword_select))].reset_index(drop = True)
     ordered_google_content_bigrams = filtered_google_content_bigrams.bigrams.value_counts().to_frame().rename(columns = {'bigrams':'count'}).reset_index().rename(columns = {'index':'bigram'})
