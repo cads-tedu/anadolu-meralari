@@ -57,8 +57,7 @@ if sidebar_select == 'Uygulama Hakkında':
         st.markdown('## Onarıcı Tarım Ekosisteminin Metinsel Analizi')
         st.markdown(' ')
         st.markdown(' ')
-        acıklama = 'font-size: 20px;">Bu uygulama, Türkiye'de 'onarıcı tarım' kavramının ve proje paydaşı olan Anadolu Meralarının ekosistemdeki yerini izlemek için geliştirilmiştir. Anadolu Meraları ve alandaki diğer aktörler ile belirlenen bazı kavramlar kullanılarak, Google ve Twitter'dan bu kavramları içeren tweetler ve Google içerikleri veri kazıma yöntemiyle çekilmiştir ve elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.</p>'
-        st.markdown(acıklama)
+        st.markdown("Bu uygulama, Türkiye'de 'onarıcı tarım' kavramının ve proje paydaşı olan Anadolu Meralarının ekosistemdeki yerini izlemek için geliştirilmiştir. Anadolu Meraları ve alandaki diğer aktörler ile belirlenen bazı kavramlar kullanılarak, Google ve Twitter'dan bu kavramları içeren tweetler ve Google içerikleri veri kazıma yöntemiyle çekilmiştir ve elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.")
         
     with col2:
         st.image('https://www.bugday.org/blog/wp-content/uploads/2020/04/image-asset.jpeg')
