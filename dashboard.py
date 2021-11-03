@@ -188,7 +188,7 @@ if sidebar_select == 'Tweetler':
     col1, col2 = st.columns([1.5, 1])
     
     with col1:
-        st.markdown('Aşağıdaki grafik, seçtiğiniz kavramları içeren tweetlerde en sık bir arada kullanılan kelime ikililerini göstermektedir.)
+        st.markdown('Aşağıdaki grafik, seçtiğiniz kavramları içeren tweetlerde en sık bir arada kullanılan kelime ikililerini göstermektedir.')
     
     col1, col2, col3 = st.columns([0.1, 0.7, 0.2])
     
