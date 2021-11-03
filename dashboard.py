@@ -64,7 +64,7 @@ if sidebar_select == 'Uygulama Hakkında':
        
     st.markdown(' ')
     
-    col1, col2, col3 = st.columns([1.4, 0.15, 0.6])
+    col1, col2, col3 = st.columns([1.3, 0.25, 0.6])
     
     with col1:
         st.markdown("Twitter ve Google arama sonuçlarından veri çekerken kullanılan kavramlar; **'onarıcı tarım', 'bütüncül yönetim', 'permakültür', 'meraların onarımı', 'sürdürülebilir tarım', 'onarım çağı', 'savory enstitüsü', 'bütüncül planlı otlatma', 'agroekoloji', 'yenileyici tarım', 'yeşil gübreleme', 'canlandırıcı tarım', 'fukuoka doğal tarım yöntemi', 'dönüşümlü ekim', 'sürmesiz tarım', 'ekolojik onarım', 'toprağa karbon gömme', 'monokültür tarım', 'doğa temelli çözümler', 'pestisit kullanımı', 'planlı otlatma', 'konvansiyonel hayvancılık', 'dönüm hattı tasarımı', 'pozitif tarım', 'toprak işlemesiz tarım', 'yoğun otlatma', 'iyi tarım uygulamaları', 'doğa dostu tarım', 'iklim dostu tarım', 'insan dostu tarım', 'toprağın su tutma kapasitesi', 'topraktaki organik madde miktarı'**")
