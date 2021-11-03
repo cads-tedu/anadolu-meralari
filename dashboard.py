@@ -56,6 +56,7 @@ if sidebar_select == 'Uygulama Hakkında':
     with col1:
         st.markdown('## Onarıcı Tarım Ekosisteminin Metinsel Analizi')
         st.markdown(' ')
+        st.markdown(' ')
         st.markdown("Bu uygulama, Türkiye'de 'onarıcı tarım' kavramının ve proje paydaşı olan Anadolu Meralarının ekosistemdeki yerini izlemek için geliştirilmiştir. Anadolu Meraları ve alandaki diğer aktörler ile belirlenen bazı kavramlar kullanılarak, Google ve Twitter'dan bu kavramları içeren tweetler ve Google içerikleri veri kazıma yöntemiyle çekilmiştir ve elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.")
         
     with col2:
@@ -63,7 +64,7 @@ if sidebar_select == 'Uygulama Hakkında':
        
     st.markdown(' ')
     
-    col1, col2, col3 = st.columns([1.5, 0.5, 0.5])
+    col1, col2, col3 = st.columns([1.5, 0.2, 0.5])
     
     with col1:
         st.markdown("Twitter ve Google arama sonuçlarından veri çekerken kullanılan kavramlar; **'onarıcı tarım', 'bütüncül yönetim', 'permakültür', 'meraların onarımı', 'sürdürülebilir tarım', 'onarım çağı', 'savory enstitüsü', 'bütüncül planlı otlatma', 'agroekoloji', 'yenileyici tarım', 'yeşil gübreleme', 'canlandırıcı tarım', 'fukuoka doğal tarım yöntemi', 'dönüşümlü ekim', 'sürmesiz tarım', 'ekolojik onarım', 'toprağa karbon gömme', 'monokültür tarım', 'doğa temelli çözümler', 'pestisit kullanımı', 'planlı otlatma', 'konvansiyonel hayvancılık', 'dönüm hattı tasarımı', 'pozitif tarım', 'toprak işlemesiz tarım', 'yoğun otlatma', 'iyi tarım uygulamaları', 'doğa dostu tarım', 'iklim dostu tarım', 'insan dostu tarım', 'toprağın su tutma kapasitesi', 'topraktaki organik madde miktarı'**")
