@@ -47,7 +47,13 @@ google_content_bigrams = pd.read_csv('google_content_bigrams.csv')
 ##Sidebar'a başlık ve farklı sayfalar oluşturmak için filtre ekleme
 st.sidebar.markdown("# Onarıcı Tarım Ekosisteminin Metinsel Analizi")
 
-sidebar_select = st.sidebar.radio(" ", ('Tweetler', 'Google Sonuçları'))
+sidebar_select = st.sidebar.radio(" ", ('Uygulama Hakkında', 'Tweetler', 'Google Sonuçları'))
+
+if sidebar_select == 'Uygulama Hakkında':
+    
+    st.title('Onarıcı Tarım Ekosisteminin Metinsel Analizi')
+    st.markdown(' ')
+    st.markdown("Bu uygulama, Türkiye'de onarıcı tarım ekosisteminde proje paydaşı olan Anadolu Meralarının yerini ölçmek için geliştirilmiştir. Alandaki aktörler ile belirlenen kavramlar kullanılarak Google ve Twitterdan veri kazıma yöntemiyle elde edilen verilerin metin madenciliği aracılığıyla analizi gerçekleştirilmiştir.")
 
 if sidebar_select == 'Tweetler':
 
@@ -192,7 +198,7 @@ if sidebar_select == 'Google Sonuçları':
     with col2:
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
                      labels={"year": "Yıl", "count": "Haber Sayısı", "keyword":"Kavram"})
-        fig.update_layout(font=dict(size=15), width=1100, height=800)
+        fig.update_layout(font=dict(size=15), width=700, height=600)
         st.plotly_chart(fig, use_container_width=True)
     
     #Siteler        
