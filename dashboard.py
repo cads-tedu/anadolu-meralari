@@ -45,7 +45,7 @@ google_title_bigrams = pd.read_csv('google_title_bigrams.csv')
 google_content_bigrams = pd.read_csv('google_content_bigrams.csv')
 
 ##Sidebar'a başlık ve farklı sayfalar oluşturmak için filtre ekleme
-st.sidebar.markdown("# Onarıcı Tarım Ekosisteminin Metinsel Analizi")
+st.sidebar.title("Onarıcı Tarım Ekosisteminin Metinsel Analizi")
 
 sidebar_select = st.sidebar.radio(" ", ('Uygulama Hakkında', 'Tweetler', 'Google Sonuçları'))
 
