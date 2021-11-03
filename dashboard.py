@@ -79,7 +79,7 @@ if sidebar_select == 'Tweetler':
     with col2:
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
                      labels={"year": "Yıl", "count": "Tweet Sayısı", "keyword":"Kavram"})
-        fig.update_layout(width=700, height=600)
+        fig.update_layout(font=dict(size=10), width=700, height=600)
         st.plotly_chart(fig, use_container_width=True)
         
     #Tweet Atan Kişiler
@@ -148,8 +148,7 @@ if sidebar_select == 'Tweetler':
     with col2:
         fig = px.bar(ordered_tweet_bigrams.iloc[0:20, :], x = 'count', y = 'bigram',
                      labels={"bigram": "Kelime İkilisi","count": "Sıklık"})
-        fig.update_layout(yaxis=dict(autorange="reversed"))
-        fig.update_layout(width=1000, height=600)
+        fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=10), width=1000, height=600)
         st.plotly_chart(fig)
 
     #st.header('Topic Modelling')
