@@ -79,7 +79,7 @@ if sidebar_select == 'Tweetler':
     with col2:
         fig = px.line(filtered_years, x = 'year', y = 'count', color = 'keyword',
                      labels={"year": "Yıl", "count": "Tweet Sayısı", "keyword":"Kavram"})
-        fig.update_layout(width=900, height=800)
+        fig.update_layout(width=700, height=600)
         st.plotly_chart(fig, use_container_width=True)
         
     #Tweet Atan Kişiler
