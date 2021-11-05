@@ -194,11 +194,12 @@ if sidebar_select == 'Tweetler':
         fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=15), width=1000, height=600)
         st.plotly_chart(fig)
 
+    #Tweet Tablosu    
     st.markdown('## Tweetler')
     st.markdown(' ')
-    st.markdown('Seçtiğiniz yıllarda atılmış, seçtiğiniz kavramları içeren tweetlerine alağıdaki tabloda görebilirsiniz.')
+    st.markdown('Seçtiğiniz yıllarda atılmış, seçtiğiniz kavramları içeren tweetleri aşağıdaki tabloda görebilirsiniz.')
     
-    filtered_tweets = twitter[(twitter.keyword.isin(keyword_select)) & (twitter.year.isin(year_select))[['datetime', 'username', 'name', 'text']].rename(columns = {'datetime':'Tarih-Saat', 'username':'Kullanıcı Adı', 'name':'İsim', 'text':'Tweet'})
+    filtered_tweets = twitter[(twitter.keyword.isin(keyword_select)) & (twitter.year.isin(year_select))][['datetime', 'username', 'name', 'text']].rename(columns = {'datetime':'Tarih-Saat', 'username':'Kullanıcı Adı', 'name':'İsim', 'text':'Tweet'})
     
     st.table(filtered_tweets)
         
