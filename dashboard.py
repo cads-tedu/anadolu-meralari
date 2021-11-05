@@ -194,15 +194,14 @@ if sidebar_select == 'Tweetler':
         fig.update_layout(yaxis=dict(autorange="reversed"), font=dict(size=15), width=1000, height=600)
         st.plotly_chart(fig)
 
-    #st.header('Topic Modelling')
+    st.markdown('Tweetler')
     
-    #col1, col2, col3 = st.columns([0.02, 0.93, 0.05])
+    col1, col2 = st.columns([1.5, 1])
     
-    #with col2:
-        #HtmlFile = open("tweets_lda5.html", 'r', encoding='utf-8')
-        #source_code = HtmlFile.read() 
-        #print(source_code)
-        #components.html(source_code, height = 800, width = 1250)
+    with col1:
+        st.markdown('Seçtiğiniz yıllarda atılmış, seçtiğiniz kavramları içeren tweetlerine alağıdaki tabloda görebilirsiniz.')
+    
+    st.table(twitter[['datetime', 'username', 'name', 'text']])
         
     
 if sidebar_select == 'Google Sonuçları':
