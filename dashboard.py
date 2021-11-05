@@ -221,7 +221,7 @@ if sidebar_select == 'Tweetler':
         columnorder = [1,2,3,4],
         columnwidth = [200,200,200,600],
         header=dict(values=list(['Tarih-Saat', 'Kullanıcı Adı', 'İsim', 'Tweet']),
-                    fill_color= '#f63366', font=dict(color='white'), align='center'),
+                    fill_color= '#ff4b4b', font=dict(color='white'), align='center'),
         cells=dict(values=[filtered_tweets['Tarih-Saat'], filtered_tweets['Kullanıcı Adı'], filtered_tweets['İsim'], filtered_tweets['Tweet']],
                    fill_color='#f0f2f6', align='center'))])
         
