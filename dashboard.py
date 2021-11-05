@@ -202,7 +202,7 @@ if sidebar_select == 'Tweetler':
     
     filtered_tweets = twitter[(twitter.keyword.isin(keyword_select)) & (twitter.year.isin(year_select))][['datetime', 'username', 'name', 'text', 'year', 'keyword']].rename(columns = {'datetime':'Tarih-Saat', 'username':'Kullanıcı Adı', 'name':'İsim', 'text':'Tweet'})
     
-    col1, col2, col3 = st.columns([3])
+    col1, col2, col3 = st.columns([1,1,1])
     
     with col1:
         table_year = st.multiselect('Yıl seçiniz.', list(filtered_tweets.year.unique()), default = list(filtered_tweets.year.unique()))
