@@ -209,7 +209,7 @@ if sidebar_select == 'Tweetler':
                    fill_color='#f0f2f6', align='center'))])
         
     fig.update_layout(margin=dict(l=20, r=0, b=0, t=0))
-    fig.update_layout(width=800)
+    fig.update_layout(width=1200)
     st.plotly_chart(fig)
         
     
