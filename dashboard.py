@@ -200,8 +200,21 @@ if sidebar_select == 'Tweetler':
     st.markdown(' ')
     st.markdown('Seçtiğiniz yıllarda atılmış, seçtiğiniz kavramları içeren tweetleri aşağıdaki tabloda görebilirsiniz.')
     
-    filtered_tweets = twitter[(twitter.keyword.isin(keyword_select)) & (twitter.year.isin(year_select))][['datetime', 'username', 'name', 'text']].rename(columns = {'datetime':'Tarih-Saat', 'username':'Kullanıcı Adı', 'name':'İsim', 'text':'Tweet'})
+    filtered_tweets = twitter[(twitter.keyword.isin(keyword_select)) & (twitter.year.isin(year_select))][['datetime', 'username', 'name', 'text', 'year', 'keyword']].rename(columns = {'datetime':'Tarih-Saat', 'username':'Kullanıcı Adı', 'name':'İsim', 'text':'Tweet'})
     
+    col1, col2, col3 = st.columns([3])
+    
+    with col1:
+        table_year = st.multiselect('Yıl seçiniz.', list(filtered_tweets.year.unique()), default = list(filtered_tweets.year.unique()))
+        
+    with col2:
+        table_name = st.text_input('İsim giriniz.', 'İsim')
+     
+    with col3:
+        table_keyword = st.multiselect('Kavram seçiniz.', list(filtered_tweets.keyword.unique()), default = list(filtered_tweets.keywor.unique()))
+        
+    filtered_tweets = filtered_tweets[(filtered_tweets.year.isin(table_year)) & (filtered_tweets.keyword.isin(table_keyword)) & (filtered_tweets.İsim == table_name)
+        
     fig = go.Figure(data=[go.Table(
         columnorder = [1,2,3,4],
         columnwidth = [200,200,200,600],
