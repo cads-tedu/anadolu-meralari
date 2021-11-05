@@ -203,20 +203,13 @@ if sidebar_select == 'Tweetler':
     
     fig = go.Figure(data=[go.Table(
         header=dict(values=list(['Tarih-Saat', 'Kullanıcı Adı', 'İsim', 'Tweet']),
-                    fill_color= '#f63366',
-                    font=dict(color='white'),
-                    align='center', ),
+                    fill_color= '#f63366', font=dict(color='white'), align='center'),
         cells=dict(values=[filtered_tweets['Tarih-Saat'], filtered_tweets['Kullanıcı Adı'], filtered_tweets['İsim'], filtered_tweets['Tweet']],
-                   fill_color='#f0f2f6',
-                   align='center'))
-        ])
+                   fill_color='#f0f2f6', align='center'))])
         
-        fig.update_layout(
-            margin=dict(l=20, r=0, b=0, t=0)
-        )
-    
-        fig.update_layout(width=800)
-        st.plotly_chart(fig)
+    fig.update_layout(margin=dict(l=20, r=0, b=0, t=0))
+    fig.update_layout(width=800)
+    st.plotly_chart(fig)
         
     
 if sidebar_select == 'Google Sonuçları':
