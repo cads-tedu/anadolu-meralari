@@ -10,6 +10,7 @@ import pandas as pd
 import plotly.express as px
 from wordcloud import WordCloud
 import streamlit.components.v1 as components
+import plotly.graph_objects as go
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(layout="wide")
