@@ -208,7 +208,7 @@ if sidebar_select == 'Tweetler':
         table_year = st.multiselect('Yıl seçiniz.', list(filtered_tweets.year.unique()), default = list(filtered_tweets.year.unique()))
         
     with col2:
-        table_name = st.text_input('İsim giriniz.', 'İsim')
+        table_name = st.text_input('İsim giriniz.', list(filtered_tweets.İsim.unique()))
      
     with col3:
         table_keyword = st.multiselect('Kavram seçiniz.', list(filtered_tweets.keyword.unique()), default = list(filtered_tweets.keyword.unique()))
