@@ -197,8 +197,10 @@ if sidebar_select == 'Tweetler':
 
     #Tweet Tablosu    
     st.markdown('## Tweetler')
-    st.markdown(' ')
-    st.markdown('Seçtiğiniz yıllarda atılmış, seçtiğiniz kavramları içeren tweetleri aşağıdaki tabloda görebilirsiniz.')
+   
+    col1, col2 = st.columns([1.5, 1])
+    with col1:
+        st.markdown('Seçtiğiniz yıllarda atılmış, seçtiğiniz kavramları içeren tweetleri aşağıdaki tabloda görebilirsiniz. Kavram ve yıl seçerek bu tweetler içinde tekrar filtreleme yapabilirsiniz.')
     
     filtered_tweets = twitter[(twitter.keyword.isin(keyword_select)) & (twitter.year.isin(year_select))][['datetime', 'username', 'name', 'text', 'year', 'keyword']].rename(columns = {'datetime':'Tarih-Saat', 'username':'Kullanıcı Adı', 'name':'İsim', 'text':'Tweet'})
     
