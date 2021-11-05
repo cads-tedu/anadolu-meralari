@@ -213,7 +213,7 @@ if sidebar_select == 'Tweetler':
     with col3:
         table_keyword = st.multiselect('Kavram seçiniz.', list(filtered_tweets.keyword.unique()), default = list(filtered_tweets.keywor.unique()))
         
-    filtered_tweets = filtered_tweets[(filtered_tweets.year.isin(table_year)) & (filtered_tweets.keyword.isin(table_keyword)) & (filtered_tweets.İsim == table_name)
+    filtered_tweets = filtered_tweets[(filtered_tweets.year.isin(table_year)) & (filtered_tweets.keyword.isin(table_keyword)) & (filtered_tweets.İsim == table_name)]
         
     fig = go.Figure(data=[go.Table(
         columnorder = [1,2,3,4],
